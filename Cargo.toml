@@ -1,0 +1,33 @@
+[package]
+name = "warp_lambda"
+description = "A super simple crate to let you use [warp filters](https://github.com/seanmonstar/warp) with [aws lambda runtime](https://github.com/awslabs/aws-lambda-rust-runtime)"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/aslamplr/warp_lambda"
+homepage = "https://github.com/aslamplr/warp_lambda#warp_lambda"
+version = "0.1.3"
+authors = ["Aslam Ahammed <aslamplr@gmail.com>"]
+edition = "2018"
+keywords = ["lambda", "aws-lambda", "warp", "serverless", "warp-lambda"]
+categories = ["web-programming", "web-programming::http-server"]
+
+[badges]
+maintenance = { status = "experimental" }
+
+[dependencies]
+aws_lambda_events = "0.4"
+# Reference issue https://github.com/awslabs/aws-lambda-rust-runtime/issues/274 
+# for the reason to move away from official awslabs/aws-lambda-rust-runtime
+# in favor of using netlify's fork lamedh-dev/aws-lambda-rust-runtime
+lamedh_http = "0.3"
+mime = "0.3"
+once_cell = "1.7"
+warp = "0.3"
+tower = "0.4"
+thiserror = "1.0"
+tracing = "0.1"
+
+[dev-dependencies]
+anyhow = "1.0"
+tokio = { version = "1.2", features = [ "full" ]}
+tracing-subscriber = "0.2"
